@@ -30,14 +30,12 @@ Before(async function (this: World, p) {
 
 AfterStep(async function (this: World, p: ITestStepHookParameter) {
   if (p.result?.status !== "FAILED") return;
-
-  const name = safeName(this.pickle.name);
-  const traceZip = path.resolve(TRACES_DIR, `${name}.zip`);
-  fs.mkdirSync(TRACES_DIR, { recursive: true });
-
-  await this.context.tracing.stop({ path: traceZip });
-
   // todo Рабочий вариант =)
+  // const name = safeName(this.pickle.name);
+  // const traceZip = path.resolve(TRACES_DIR, `${name}.zip`);
+  // fs.mkdirSync(TRACES_DIR, { recursive: true });
+  //
+  // await this.context.tracing.stop({ path: traceZip });
   // await step("trace", async () => {
   //   const buf = fs.readFileSync(traceZip);
   //   await attachment("trace", buf, "application/vnd.allure.playwright-trace");
@@ -49,6 +47,8 @@ After(async function (this: World) {
   const name = safeName(this.pickle.name);
   const traceZip = path.resolve(TRACES_DIR, `${name}.zip`);
   fs.mkdirSync(TRACES_DIR, { recursive: true });
+// без разницы в каком моменте останавливаем трейсы, можем и в AfterStep, они все равно не крепятся в *-result.json
+  await this.context.tracing.stop({ path: traceZip });
   await step("trace", async () => {
     const buf = fs.readFileSync(traceZip);
     await attachment("trace", buf, "application/vnd.allure.playwright-trace");

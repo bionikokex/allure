@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-### Node.js 18+ and Yarn 1.x installed.
+### Node.js 24+ and Yarn 1.x installed.
 
 #### Optional: Allure CLI if an HTML report is needed.
 
