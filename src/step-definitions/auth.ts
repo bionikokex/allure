@@ -1,5 +1,5 @@
 import {Then, When} from "@cucumber/cucumber";
-import {World} from "../types/types";
+import {World} from "../types/world";
 
 
 When('I open the page {string}', async function (this: World, url: string) {
@@ -7,5 +7,5 @@ When('I open the page {string}', async function (this: World, url: string) {
 });
 
 Then("fail intentionally", async function () {
-  throw new Error("Intentional fail for attachment reproduction");
+  throw new Error("failed =)");
 });

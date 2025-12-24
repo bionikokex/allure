@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "@cucumber/cucumber": "12.4.0",
+    "@types/node": "22.16.5",
     "allure-cucumberjs": "3.4.3",
     "allure-js-commons": "3.4.3",
     "dotenv": "17.2.0",
     "playwright": "1.56.1",
     "ts-node": "^10.9.2",
-    "typescript": "5.8.3",
-    "@types/node": "22.16.5"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.8.3"
   }
 }

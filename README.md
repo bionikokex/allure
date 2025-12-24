@@ -13,5 +13,5 @@ yarn install
 ```
 Run tests
 ```bash
-yarn test
+cucumber-js --tags @attach
 ```

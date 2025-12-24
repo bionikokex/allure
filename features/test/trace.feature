@@ -1,6 +1,6 @@
-Feature: Allure trace attachments
+Feature: Allure trace
 
-  @attachment
-  Scenario: Attach playwright trace in After hook
+  @attach
+  Scenario: Allure playwright trace in After hook
     When I open the page "https://playwright.dev/"
     Then fail intentionally
