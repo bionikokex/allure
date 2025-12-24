@@ -46,12 +46,12 @@ AfterStep(async function (this: World, p: ITestStepHookParameter) {
 
 After(async function (this: World) {
   //todo Нерабочий вариант =(
-  // const name = safeName(this.pickle.name);
-  // const traceZip = path.resolve(TRACES_DIR, `${name}.zip`);
-  // fs.mkdirSync(TRACES_DIR, { recursive: true });
-  // await step("trace", async () => {
-  //   const buf = fs.readFileSync(traceZip);
-  //   await attachment("trace", buf, "application/vnd.allure.playwright-trace");
-  // });
+  const name = safeName(this.pickle.name);
+  const traceZip = path.resolve(TRACES_DIR, `${name}.zip`);
+  fs.mkdirSync(TRACES_DIR, { recursive: true });
+  await step("trace", async () => {
+    const buf = fs.readFileSync(traceZip);
+    await attachment("trace", buf, "application/vnd.allure.playwright-trace");
+  });
   await this.context?.close();
 });
