@@ -5,4 +5,5 @@ export default {
     formatOptions: {
         resultsDir: 'allure-results',
     },
+    publishQuiet: true,
 };
